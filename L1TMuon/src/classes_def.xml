@@ -1,0 +1,19 @@
+<lcgdict>
+ <selection>
+
+  <class name="L1TMuonEndCap::EMTFTrack"/>
+  <class name="L1TMuonEndCap::EMTFTrackCollection"/>
+  <class name="edm::Wrapper<L1TMuonEndCap::EMTFTrackCollection>"/>
+  <class name="L1TMuonEndCap::EMTFHit"/>
+  <class name="L1TMuonEndCap::EMTFHitCollection"/>
+  <class name="edm::Wrapper<L1TMuonEndCap::EMTFHitCollection>"/>
+
+  <class name="L1TMuonEndCap::EMTFTrackExtra"/>
+  <class name="L1TMuonEndCap::EMTFTrackExtraCollection"/>
+  <class name="edm::Wrapper<L1TMuonEndCap::EMTFTrackExtraCollection>"/>
+  <class name="L1TMuonEndCap::EMTFHitExtra"/>
+  <class name="L1TMuonEndCap::EMTFHitExtraCollection"/>
+  <class name="edm::Wrapper<L1TMuonEndCap::EMTFHitExtraCollection>"/>
+
+ </selection>
+</lcgdict>
