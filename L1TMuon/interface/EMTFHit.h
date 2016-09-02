@@ -14,7 +14,7 @@
 #include "DataFormats/MuonDetId/interface/RPCDetId.h"
 #include "DataFormats/CSCDigi/interface/CSCCorrelatedLCTDigi.h"
 #include "DataFormats/RPCDigi/interface/RPCDigi.h"
-#include "DataFormats/L1TMuon/interface/EMTF/ME.h"
+//#include "DataFormats/L1TMuon/interface/EMTF/ME.h"
 
 namespace L1TMuonEndCap {
   
@@ -41,7 +41,7 @@ namespace L1TMuonEndCap {
     CSCCorrelatedLCTDigi CreateCSCCorrelatedLCTDigi();
     void ImportRPCDigi (const RPCDigi& _digi);
     RPCDigi CreateRPCDigi();
-    void ImportME (const emtf::ME _ME );
+    //void ImportME (const emtf::ME _ME );
 
     void PrintSimulatorHeader();
     void PrintForSimulator();

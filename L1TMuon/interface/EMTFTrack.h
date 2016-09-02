@@ -9,7 +9,7 @@
  
 #include "DataFormats/GeometryVector/interface/Pi.h"
 #include "DataFormatsSep2016/L1TMuon/interface/EMTFHit.h"
-#include "DataFormats/L1TMuon/interface/EMTF/SP.h"
+//#include "DataFormats/L1TMuon/interface/EMTF/SP.h"
 
 
 namespace L1TMuonEndCap {
@@ -31,7 +31,7 @@ namespace L1TMuonEndCap {
 
     // float pi = 3.141592653589793238;
 
-    void ImportSP( const emtf::SP _SP, int _sector );
+    //void ImportSP( const emtf::SP _SP, int _sector );
     void ImportPtLUT( int _mode, unsigned long _address );
 
     void set_Hits(EMTFHitCollection bits)       { _Hits = bits;                numHits = _Hits.size(); }
