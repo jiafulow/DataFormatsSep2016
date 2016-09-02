@@ -7,8 +7,8 @@
 #include <vector>
 #include <boost/cstdint.hpp> 
 
-#include "DataFormats/L1TMuon/interface/EMTFTrack.h"
-#include "DataFormats/L1TMuon/interface/EMTFHitExtra.h"
+#include "DataFormatsSep2016/L1TMuon/interface/EMTFTrack.h"
+#include "DataFormatsSep2016/L1TMuon/interface/EMTFHitExtra.h"
 
 
 namespace L1TMuonEndCap {

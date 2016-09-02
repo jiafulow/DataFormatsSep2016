@@ -8,7 +8,7 @@
 #include <boost/cstdint.hpp>
  
 #include "DataFormats/GeometryVector/interface/Pi.h"
-#include "DataFormats/L1TMuon/interface/EMTFHit.h"
+#include "DataFormatsSep2016/L1TMuon/interface/EMTFHit.h"
 #include "DataFormats/L1TMuon/interface/EMTF/SP.h"
 
 
