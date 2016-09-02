@@ -12,7 +12,7 @@
 #include "DataFormats/L1TMuon/interface/EMTF/SP.h"
 
 
-namespace l1t {
+namespace L1TMuonEndCap {
   class EMTFTrack {
   public:
     

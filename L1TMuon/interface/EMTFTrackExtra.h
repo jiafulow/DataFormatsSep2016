@@ -11,7 +11,7 @@
 #include "DataFormats/L1TMuon/interface/EMTFHitExtra.h"
 
 
-namespace l1t {
+namespace L1TMuonEndCap {
   class EMTFTrackExtra: public EMTFTrack {
   public:
     

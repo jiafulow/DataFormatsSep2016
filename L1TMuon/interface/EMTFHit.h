@@ -16,7 +16,7 @@
 #include "DataFormats/RPCDigi/interface/RPCDigi.h"
 #include "DataFormats/L1TMuon/interface/EMTF/ME.h"
 
-namespace l1t {
+namespace L1TMuonEndCap {
   
   class EMTFHit {
   public:

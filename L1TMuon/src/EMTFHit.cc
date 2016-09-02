@@ -1,4 +1,4 @@
 #include "DataFormats/L1TMuon/interface/EMTFHit.h"
 
-namespace l1t {
+namespace L1TMuonEndCap {
 } // End namespace l1t

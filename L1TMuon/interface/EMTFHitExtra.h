@@ -13,7 +13,7 @@
 #include "DataFormats/GeometryVector/interface/Pi.h"
 #include "DataFormats/L1TMuon/interface/EMTFHit.h"
 
-namespace l1t {
+namespace L1TMuonEndCap {
   class EMTFHitExtra: public EMTFHit {
   public:
     
