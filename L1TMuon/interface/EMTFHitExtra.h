@@ -6,15 +6,9 @@
 
 namespace L1TMuonEndCap {
 
-  class EMTFHitExtra {
-  public:
+  struct EMTFHitExtra : public EMTFHit {
 
-    struct EMTFHitExtraData {
-
-    };
-
-  private:
-
+    EMTFHitExtra() : EMTFHit() {}
 
   };  // class EMTFHitExtra
 
