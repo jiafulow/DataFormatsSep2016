@@ -7,6 +7,9 @@
   <class name="L1TMuonEndCap::EMTFHit"/>
   <class name="L1TMuonEndCap::EMTFHitCollection"/>
   <class name="edm::Wrapper<L1TMuonEndCap::EMTFHitCollection>"/>
+  <class name="L1TMuonEndCap::EMTFRoad"/>
+  <class name="L1TMuonEndCap::EMTFRoadCollection"/>
+  <class name="edm::Wrapper<L1TMuonEndCap::EMTFRoadCollection>"/>
 
   <class name="L1TMuonEndCap::EMTFTrackExtra"/>
   <class name="L1TMuonEndCap::EMTFTrackExtraCollection"/>
@@ -14,6 +17,9 @@
   <class name="L1TMuonEndCap::EMTFHitExtra"/>
   <class name="L1TMuonEndCap::EMTFHitExtraCollection"/>
   <class name="edm::Wrapper<L1TMuonEndCap::EMTFHitExtraCollection>"/>
+  <class name="L1TMuonEndCap::EMTFRoadExtra"/>
+  <class name="L1TMuonEndCap::EMTFRoadExtraCollection"/>
+  <class name="edm::Wrapper<L1TMuonEndCap::EMTFRoadExtraCollection>"/>
 
  </selection>
 </lcgdict>

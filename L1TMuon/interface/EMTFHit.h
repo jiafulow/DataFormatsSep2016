@@ -11,7 +11,7 @@ namespace L1TMuonEndCap {
     EMTFHit() : endcap(0), station(0), ring(0), chamber(0), sector(0), subsector(0), csc_ID(0), cscn_ID(0),
                 bx(0), subsystem(0), pc_station(0), pc_chamber(0),
                 valid(0), strip(0), wire(0), quality(0), pattern(0), bend(0),
-                phi_fp(0), theta_fp(0), phzvl(0), ph_hit(0), ph_zone_hit(0), ph_zone_contrib(0),
+                phi_fp(0), theta_fp(0), phzvl(0), ph_hit(0), zone_hit(0), zone_code(0),
                 bc0(0), mpc_link(0), sync_err(0), track_num(0), stub_num(0), bx0(0), layer(0)
                 {}
 
@@ -48,8 +48,8 @@ namespace L1TMuonEndCap {
     uint16_t theta_fp;
     uint16_t phzvl;
     uint16_t ph_hit;
-    uint16_t ph_zone_hit;
-    uint16_t ph_zone_contrib;
+    uint16_t zone_hit;
+    uint16_t zone_code;
 
     // Other
     uint16_t bc0;
