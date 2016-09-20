@@ -21,5 +21,7 @@
   <class name="L1TMuonEndCap::EMTFRoadExtraCollection"/>
   <class name="edm::Wrapper<L1TMuonEndCap::EMTFRoadExtraCollection>"/>
 
+  <class name="L1TMuonEndCap::EMTFPtLUTData"/>
+
  </selection>
 </lcgdict>

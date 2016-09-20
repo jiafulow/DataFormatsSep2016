@@ -8,11 +8,10 @@ namespace L1TMuonEndCap {
 
   struct EMTFRoad {
 
-    EMTFRoad() : endcap(0), sector(0),
-                 bx(0),
+    EMTFRoad() : endcap(0), sector(0), bx(0),
                  zone(0), key_zhit(0), pattern(0),
                  straightness(0), layer_code(0), quality_code(0),
-                 ph_q(0), ph_num(0)
+                 ph_q(0), ph_num(0), winner(0)
                  {}
 
     // DetId
@@ -20,7 +19,7 @@ namespace L1TMuonEndCap {
     int16_t sector;
 
     // BX
-    uint16_t bx;
+    int16_t bx;
 
     // Pattern detector ID
     uint16_t zone;
@@ -33,6 +32,7 @@ namespace L1TMuonEndCap {
 
     uint16_t ph_q;
     uint16_t ph_num;
+    uint16_t winner;  // 0: first winner, 1: second winner, ...
 
   };  // class EMTFRoad
 
