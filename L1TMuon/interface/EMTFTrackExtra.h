@@ -14,7 +14,7 @@ namespace L1TMuonEndCap {
     EMTFTrackExtra() : EMTFTrack(),
                        num_xhits(0),
                        xroad(),
-                       xhits(), xhits_ph_diff(), xhits_valid()
+                       xhits(), xhits_ph_diff()
                        {}
 
     // Number of hits
@@ -25,8 +25,7 @@ namespace L1TMuonEndCap {
 
     // Hits
     std::vector<EMTFHitExtra> xhits;
-    std::vector<int>          xhits_ph_diff;
-    std::vector<bool>         xhits_valid;
+    std::vector<uint16_t>     xhits_ph_diff;
 
   };  // class EMTFTrackExtra
 
