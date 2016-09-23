@@ -11,8 +11,8 @@ namespace L1TMuonEndCap {
     EMTFHitExtra() : endcap(0), station(0), ring(0), chamber(0), sector(0), subsector(0), csc_ID(0), cscn_ID(0),
                      bx(0), subsystem(0), pc_station(0), pc_chamber(0),
                      valid(0), strip(0), wire(0), quality(0), pattern(0), bend(0),
-                     phi_fp(0), theta_fp(0), phzvl(0), ph_hit(0), zone_hit(0), zone_code(0)
-                     //bc0(0), mpc_link(0), sync_err(0), track_num(0), stub_num(0), bx0(0), layer(0)
+                     phi_fp(0), theta_fp(0), phzvl(0), ph_hit(0), zone_hit(0), zone_code(0),
+                     bc0(0), mpc_link(0), sync_err(0), track_num(0), stub_num(0), bx0(0), layer(0)
                      {}
 
     // DetId
@@ -52,13 +52,13 @@ namespace L1TMuonEndCap {
     uint16_t zone_code;
 
     // Other
-    //uint16_t bc0;
-    //uint16_t mpc_link;
-    //uint16_t sync_err;
-    //uint16_t track_num;
-    //uint16_t stub_num;
-    //uint16_t bx0;
-    //uint16_t layer;
+    uint16_t bc0;
+    uint16_t mpc_link;
+    uint16_t sync_err;
+    uint16_t track_num;
+    uint16_t stub_num;
+    uint16_t bx0;
+    uint16_t layer;
 
   };  // class EMTFHitExtra
 
