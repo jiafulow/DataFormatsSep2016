@@ -1,6 +1,6 @@
 <lcgdict>
  <selection>
-
+<!--
   <class name="L1TMuonEndCap::EMTFTrack"/>
   <class name="L1TMuonEndCap::EMTFTrackCollection"/>
   <class name="edm::Wrapper<L1TMuonEndCap::EMTFTrackCollection>"/>
@@ -10,7 +10,7 @@
   <class name="L1TMuonEndCap::EMTFRoad"/>
   <class name="L1TMuonEndCap::EMTFRoadCollection"/>
   <class name="edm::Wrapper<L1TMuonEndCap::EMTFRoadCollection>"/>
-
+-->
   <class name="L1TMuonEndCap::EMTFTrackExtra"/>
   <class name="L1TMuonEndCap::EMTFTrackExtraCollection"/>
   <class name="edm::Wrapper<L1TMuonEndCap::EMTFTrackExtraCollection>"/>
