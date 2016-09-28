@@ -9,7 +9,8 @@ namespace L1TMuonEndCap {
   struct EMTFHitExtra {
 
     EMTFHitExtra() : endcap(0), station(0), ring(0), chamber(0), sector(0), subsector(0), csc_ID(0), cscn_ID(0),
-                     bx(0), subsystem(0), pc_station(0), pc_chamber(0),
+                     bx(0), subsystem(0),
+                     pc_sector(0), pc_station(0), pc_chamber(0),
                      valid(0), strip(0), wire(0), quality(0), pattern(0), bend(0),
                      phi_fp(0), theta_fp(0), phzvl(0), ph_hit(0), zone_hit(0), zone_code(0),
                      bc0(0), mpc_link(0), sync_err(0), track_num(0), stub_num(0), bx0(0), layer(0)
@@ -32,6 +33,7 @@ namespace L1TMuonEndCap {
     int16_t subsystem;
 
     // Station and chamber in firmware
+    uint16_t pc_sector;
     uint16_t pc_station;
     uint16_t pc_chamber;
 

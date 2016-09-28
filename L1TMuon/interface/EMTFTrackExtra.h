@@ -15,11 +15,12 @@ namespace L1TMuonEndCap {
   struct EMTFTrackExtra {
 
     EMTFTrackExtra() : endcap(0), sector(0), bx(0), first_bx(0), second_bx(0),
+                       zone(0),
                        rank(0), winner(0), mode(0), mode_inv(0),
                        phi_int(0), theta_int(0),
                        ptlut_address(0),
                        pt(0.), pt_xml(0.),
-                       gmt_pt(0), gmt_phi(0), gmt_eta(0), gmt_quality(0), gmt_charge(0),
+                       gmt_pt(0), gmt_phi(0), gmt_eta(0), gmt_quality(0), gmt_charge(0), gmt_charge_valid(0),
                        ptlut_data(),
                        xroad(),
                        num_xhits(0),
@@ -34,6 +35,9 @@ namespace L1TMuonEndCap {
     int16_t bx;
     int16_t first_bx;
     int16_t second_bx;
+
+    // Zone
+    uint16_t zone;
 
     // Rank
     uint16_t rank;
@@ -60,6 +64,7 @@ namespace L1TMuonEndCap {
     int32_t gmt_eta;
     int32_t gmt_quality;
     int32_t gmt_charge;
+    int32_t gmt_charge_valid;
 
     // pT LUT data
     EMTFPtLUTData ptlut_data;
