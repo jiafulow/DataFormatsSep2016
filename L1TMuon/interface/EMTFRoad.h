@@ -1,5 +1,5 @@
-#ifndef __l1t_EMTFRoad_h__
-#define __l1t_EMTFRoad_h__
+#ifndef __L1TMuon_EMTFRoad_h__
+#define __L1TMuon_EMTFRoad_h__
 
 #include <cstdint>
 #include <vector>
@@ -15,5 +15,4 @@ namespace L1TMuonEndCap {
 
 } // End of namespace l1t
 
-#endif /* define __l1t_EMTFRoad_h__ */
-
+#endif

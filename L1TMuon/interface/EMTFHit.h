@@ -2,8 +2,8 @@
 // Based on L1Trigger/L1TMuon/interface/deprecate/MuonTriggerPrimitive.h
 // In particular, see struct CSCData
 
-#ifndef __l1t_EMTFHit_h__
-#define __l1t_EMTFHit_h__
+#ifndef __L1TMuon_EMTFHit_h__
+#define __L1TMuon_EMTFHit_h__
 
 #include <vector>
 #include <boost/cstdint.hpp> 
@@ -159,4 +159,4 @@ namespace L1TMuonEndCap {
   
 } // End of namespace l1t
 
-#endif /* define __l1t_EMTFHit_h__ */
+#endif

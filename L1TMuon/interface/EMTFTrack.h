@@ -1,8 +1,8 @@
 // Class for muon tracks in EMTF - AWB 04.01.16
 // Mostly copied from L1Trigger/L1TMuonEndCap/interface/MuonInternalTrack.h
 
-#ifndef __l1t_EMTFTrack_h__
-#define __l1t_EMTFTrack_h__
+#ifndef __L1TMuon_EMTFTrack_h__
+#define __L1TMuon_EMTFTrack_h__
 
 #include <vector>
 #include <boost/cstdint.hpp>
@@ -202,4 +202,4 @@ namespace L1TMuonEndCap {
   
 } // End of namespace l1t
 
-#endif /* define __l1t_EMTFTrack_h__ */
+#endif
