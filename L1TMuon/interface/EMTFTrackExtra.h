@@ -23,8 +23,7 @@ namespace L1TMuonEndCap {
                        gmt_pt(0), gmt_phi(0), gmt_eta(0), gmt_quality(0), gmt_charge(0), gmt_charge_valid(0),
                        ptlut_data(),
                        xroad(),
-                       num_xhits(0),
-                       xhits(), xhits_ph_diff()
+                       xhits()
                        {}
 
     // DetId
@@ -72,12 +71,8 @@ namespace L1TMuonEndCap {
     // Road
     EMTFRoadExtra xroad;
 
-    // Number of hits
-    uint16_t num_xhits;
-
     // Hits
     std::vector<EMTFHitExtra> xhits;
-    std::vector<uint16_t>     xhits_ph_diff;
 
   };  // class EMTFTrackExtra
 
