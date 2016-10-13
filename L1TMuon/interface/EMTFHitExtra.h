@@ -32,10 +32,11 @@ namespace L1TMuonEndCap {
     // Subsystem
     int16_t subsystem;
 
-    // Station and chamber in firmware
+    // Labels for the PrimitiveConversion processing unit
     uint16_t pc_sector;
     uint16_t pc_station;
     uint16_t pc_chamber;
+    uint16_t pc_segment;
 
     // Input to PrimitiveConversion
     uint16_t valid;
