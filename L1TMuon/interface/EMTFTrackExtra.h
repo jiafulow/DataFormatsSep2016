@@ -19,8 +19,8 @@ namespace L1TMuonEndCap {
                        rank(0), winner(0), mode(0), mode_inv(0),
                        phi_int(0), theta_int(0),
                        ptlut_address(0),
-                       pt(0.), pt_xml(0.),
                        gmt_pt(0), gmt_phi(0), gmt_eta(0), gmt_quality(0), gmt_charge(0), gmt_charge_valid(0),
+                       pt(0.), xmlpt(0.),
                        ptlut_data(),
                        xroad(),
                        xhits()
@@ -53,10 +53,6 @@ namespace L1TMuonEndCap {
     // pT LUT address
     uint64_t ptlut_address;
 
-    // pT LUT output
-    float    pt;
-    float    pt_xml;
-
     // GMT
     int32_t gmt_pt;
     int32_t gmt_phi;
@@ -64,6 +60,10 @@ namespace L1TMuonEndCap {
     int32_t gmt_quality;
     int32_t gmt_charge;
     int32_t gmt_charge_valid;
+
+    // pT from XML
+    float    pt;
+    float    xmlpt;
 
     // pT LUT data
     EMTFPtLUTData ptlut_data;

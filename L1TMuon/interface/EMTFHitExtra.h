@@ -8,7 +8,8 @@ namespace L1TMuonEndCap {
 
   struct EMTFHitExtra {
 
-    EMTFHitExtra() : endcap(0), station(0), ring(0), chamber(0), sector(0), subsector(0), csc_ID(0), cscn_ID(0),
+    EMTFHitExtra() : detId(0),
+                     endcap(0), station(0), ring(0), chamber(0), sector(0), subsector(0), csc_ID(0), cscn_ID(0),
                      bx(0), subsystem(0),
                      pc_sector(0), pc_station(0), pc_chamber(0), pc_segment(0),
                      valid(0), strip(0), wire(0), quality(0), pattern(0), bend(0),
@@ -18,6 +19,8 @@ namespace L1TMuonEndCap {
                      {}
 
     // DetId
+    uint32_t detId;
+
     int16_t endcap;
     int16_t station;
     int16_t ring;
