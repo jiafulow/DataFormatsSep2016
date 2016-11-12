@@ -16,7 +16,7 @@ namespace L1TMuonEndCap {
 
     EMTFTrackExtra() : endcap(0), sector(0), bx(0), first_bx(0), second_bx(0),
                        zone(0),
-                       rank(0), winner(0), mode(0), mode_inv(0),
+                       rank(0), winner(0), track_num(0), mode(0), mode_inv(0),
                        phi_int(0), theta_int(0),
                        ptlut_address(0),
                        gmt_pt(0), gmt_phi(0), gmt_eta(0), gmt_quality(0), gmt_charge(0), gmt_charge_valid(0),
@@ -41,6 +41,7 @@ namespace L1TMuonEndCap {
     // Rank
     uint16_t rank;
     uint16_t winner;  // 0: first winner, 1: second winner, ...
+    uint16_t track_num;  // the final position after removing invalid tracks and ghosts
 
     // Mode
     uint16_t mode;
