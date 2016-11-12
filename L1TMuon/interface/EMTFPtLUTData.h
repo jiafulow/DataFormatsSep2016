@@ -13,9 +13,10 @@ namespace L1TMuonEndCap {
     uint16_t sign_th   [6]; // ^
     uint16_t cpattern  [4]; // index: 0=ME1, 1=ME2, 2=ME3, 3=ME4
     uint16_t fr        [4]; // ^
-    uint16_t ph        [4]; // ^
-    uint16_t th        [4]; // ^
-    uint16_t bt_chamber[4]; // ^
+    uint16_t bt_vi     [5]; // index: 0=ME1sub1, 1=ME1sub2, 2=ME2, 3=ME3, 4=ME4
+    uint16_t bt_hi     [5]; // ^
+    uint16_t bt_ci     [5]; // ^
+    uint16_t bt_si     [5]; // ^
   };
 
 }
