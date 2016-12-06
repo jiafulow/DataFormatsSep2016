@@ -15,7 +15,6 @@ namespace L1TMuonEndCap {
                      valid(0), strip(0), strip_low(0), strip_hi(0), wire(0), quality(0), pattern(0), bend(0),
                      phi_fp(0), theta_fp(0), phzvl(0), ph_hit(0), zone_hit(0), zone_code(0),
                      fs_segment(0), fs_zone_code(0), bt_station(0), bt_segment(0),
-                     bc0(0), mpc_link(0), sync_err(0), track_num(0), stub_num(0), bx0(0), layer(0),
                      phi_loc_deg(0), phi_glob_deg(0), theta_deg(0), eta(0)
                      {}
 
@@ -69,15 +68,6 @@ namespace L1TMuonEndCap {
     // Variables used in BestTrackSelection
     uint16_t bt_station;
     uint16_t bt_segment;
-
-    // Other
-    uint16_t bc0;
-    uint16_t mpc_link;
-    uint16_t sync_err;
-    uint16_t track_num;
-    uint16_t stub_num;
-    uint16_t bx0;
-    uint16_t layer;
 
     // Coordinates
     float phi_loc_deg;
