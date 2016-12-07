@@ -6,7 +6,6 @@
 #include <array>
 
 #include "DataFormatsSep2016/L1TMuon/interface/EMTFHitExtra.h"
-#include "DataFormatsSep2016/L1TMuon/interface/EMTFRoadExtra.h"
 #include "DataFormatsSep2016/L1TMuon/interface/EMTFPtLUTData.h"
 
 
@@ -22,7 +21,6 @@ namespace L1TMuonEndCap {
                        gmt_pt(0), gmt_phi(0), gmt_eta(0), gmt_quality(0), gmt_charge(0), gmt_charge_valid(0),
                        pt(0.), xmlpt(0.),
                        ptlut_data(),
-                       xroad(),
                        xhits()
                        {}
 
@@ -68,9 +66,6 @@ namespace L1TMuonEndCap {
 
     // pT LUT data
     EMTFPtLUTData ptlut_data;
-
-    // Road
-    EMTFRoadExtra xroad;
 
     // Hits
     std::vector<EMTFHitExtra> xhits;

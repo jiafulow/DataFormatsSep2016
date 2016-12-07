@@ -9,13 +9,12 @@ namespace L1TMuonEndCap {
   struct EMTFHitExtra {
 
     EMTFHitExtra() : detId(0),
-      endcap(0), station(0), ring(0), roll(0), chamber(0), sector(0), subsector(0), csc_ID(0), cscn_ID(0),
+                     endcap(0), station(0), ring(0), roll(0), chamber(0), sector(0), subsector(0), csc_ID(0), cscn_ID(0),
                      bx(0), subsystem(0),
-                     pc_sector(0), pc_station(0), pc_chamber(0), pc_segment(0), vetoed(0),
+                     pc_sector(0), pc_station(0), pc_chamber(0), pc_segment(0),
                      valid(0), strip(0), strip_low(0), strip_hi(0), wire(0), quality(0), pattern(0), bend(0),
                      phi_fp(0), theta_fp(0), phzvl(0), ph_hit(0), zone_hit(0), zone_code(0),
-                     fs_segment(0), fs_zone_code(0),
-                     bc0(0), mpc_link(0), sync_err(0), track_num(0), stub_num(0), bx0(0), layer(0),
+                     fs_segment(0), fs_zone_code(0), bt_station(0), bt_segment(0),
                      phi_loc_deg(0), phi_glob_deg(0), theta_deg(0), eta(0)
                      {}
 
@@ -43,7 +42,6 @@ namespace L1TMuonEndCap {
     uint16_t pc_station;
     uint16_t pc_chamber;
     uint16_t pc_segment;
-    uint16_t vetoed;
 
     // Input to PrimitiveConversion
     uint16_t valid;
@@ -67,14 +65,9 @@ namespace L1TMuonEndCap {
     uint16_t fs_segment;
     uint16_t fs_zone_code;
 
-    // Other
-    uint16_t bc0;
-    uint16_t mpc_link;
-    uint16_t sync_err;
-    uint16_t track_num;
-    uint16_t stub_num;
-    uint16_t bx0;
-    uint16_t layer;
+    // Variables used in BestTrackSelection
+    uint16_t bt_station;
+    uint16_t bt_segment;
 
     // Coordinates
     float phi_loc_deg;
