@@ -1,4 +1,6 @@
-#include "DataFormatsSep2016/L1TMuon/interface/EMTFTrack.h"
+#include "DataFormatsSep2016/L1TMuon/interface/EMTFTrackExtra.h"
 
-namespace L1TMuonEndCap {
-} // End namespace l1t
+#include <cassert>
+#include <type_traits>
+//static_assert(std::is_trivially_copyable<L1TMuonEndCap::EMTFTrackExtra>::value, "EMTFTrackExtra is not trivially copyable");  // is false
+
