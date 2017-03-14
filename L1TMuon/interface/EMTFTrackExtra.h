@@ -14,7 +14,7 @@ namespace L1TMuonEndCap {
   struct EMTFTrackExtra {
 
     EMTFTrackExtra() : endcap(0), sector(0), bx(0), first_bx(0), second_bx(0),
-                       zone(0),
+                       zone(0), ph_num(0), ph_q(0),
                        rank(0), winner(0), track_num(0), mode(0), mode_inv(0),
                        phi_int(0), theta_int(0),
                        ptlut_address(0),
@@ -35,6 +35,10 @@ namespace L1TMuonEndCap {
 
     // Zone
     uint16_t zone;
+
+    // Phi pattern
+    uint16_t ph_num;
+    uint16_t ph_q;
 
     // Rank
     uint16_t rank;
