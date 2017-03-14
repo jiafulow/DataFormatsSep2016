@@ -22,72 +22,72 @@ namespace l1t {
   public:
     
     EMTFHit() :
-        endcap(0), station(0), ring(0), roll(0), chamber(0), sector(0), subsector(0), csc_ID(0), cscn_ID(0),
-        bx(0), subsystem(0),
-        pc_sector(0), pc_station(0), pc_chamber(0), pc_segment(0),
-        valid(0), strip(0), strip_low(0), strip_hi(0), wire(0), quality(0), pattern(0), bend(0),
-        phi_fp(0), theta_fp(0), phzvl(0), ph_hit(0), zone_hit(0), zone_code(0),
-        fs_segment(0), fs_zone_code(0), bt_station(0), bt_segment(0),
-        phi_loc_deg(0), phi_glob_deg(0), theta_deg(0), eta(0)
+        endcap(-99), station(-99), ring(-99), sector(-99), sector_idx(-99), subsector(-99), 
+        chamber(-99), csc_ID(-99), cscn_ID(-99), roll(-99), rpc_layer(-99), neighbor(-99), mpc_link(-99),
+        pc_sector(-99), pc_station(-99), pc_chamber(-99), pc_segment(-99),
+        wire(-99), strip(-99), strip_hi(-99), strip_low(-99), track_num(-99), quality(-99), 
+        pattern(-99), bend(-99), valid(-99), sync_err(-99), bc0(-99), bx(-99), stub_num(-99),
+        phi_fp(-99), theta_fp(-99), phzvl(-99), ph_hit(-99), zone_hit(-99), zone_code(-99),
+        fs_segment(-99), fs_zone_code(-99), bt_station(-99), bt_segment(-99),
+        phi_loc(-99), phi_glob(-99), theta(-99), eta(-99),
+        phi_sim(-99), theta_sim(-99), eta_sim(-99),
+        is_CSC(-99), is_RPC(-99), subsystem(-99),
         {};
 
     virtual ~EMTFHit() {};
 
   private:
 
-    int16_t endcap;
-    int16_t station;
-    int16_t ring;
-    int16_t roll;
-    int16_t chamber;
-    int16_t sector;
-    int16_t subsector;
-    int16_t csc_ID;
-    int16_t cscn_ID;
-
-    // BX
-    int16_t bx;
-
-    // Subsystem
-    int16_t subsystem;
-
-    // Labels for the PrimitiveConversion processing unit
-    uint16_t pc_sector;
-    uint16_t pc_station;
-    uint16_t pc_chamber;
-    uint16_t pc_segment;
-
-    // Input to PrimitiveConversion
-    uint16_t valid;
-    uint16_t strip;
-    uint16_t strip_low;
-    uint16_t strip_hi;
-    uint16_t wire;
-    uint16_t quality;
-    uint16_t pattern;
-    uint16_t bend;
-
-    // Output from PrimitiveConversion
-    uint16_t phi_fp;
-    uint16_t theta_fp;
-    uint16_t phzvl;
-    uint16_t ph_hit;
-    uint16_t zone_hit;
-    uint16_t zone_code;
-
-    // Variables used in PrimitiveMatching
-    uint16_t fs_segment;
-    uint16_t fs_zone_code;
-
-    // Variables used in BestTrackSelection
-    uint16_t bt_station;
-    uint16_t bt_segment;
-
-    // Coordinates
-    float phi_loc_deg;
-    float phi_glob_deg;
-    float theta_deg;
+    int endcap;
+    int station;
+    int ring;
+    int sector;
+    int sector_idx;
+    int subsector;
+    int chamber;
+    int csc_ID;
+    int cscn_ID;
+    int roll;
+    int rpc_layer;
+    int neighbor;
+    int mpc_link;
+    int pc_sector;
+    int pc_station;
+    int pc_chamber;
+    int pc_segment;
+    int wire;
+    int strip;
+    int strip_hi;
+    int strip_low;
+    int track_num;
+    int quality;
+    int pattern;
+    int bend;
+    int valid;
+    int sync_err;
+    int bc0;
+    int bx;
+    int stub_num;
+    int phi_fp;
+    int theta_fp;
+    int phzvl;
+    int ph_hit;
+    int zone_hit;
+    int zone_code;
+    int fs_segment;
+    int fs_zone_code;
+    int bt_station;
+    int bt_segment;
+    float phi_loc;
+    float phi_glob;
+    float theta;
     float eta;
+    float phi_sim;
+    float theta_sim;
+    float eta_sim;
+    int is_CSC;
+    int is_RPC;
+    int subsystem;
 
   }; // End of class EMTFHit
   
