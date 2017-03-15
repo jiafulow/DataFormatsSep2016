@@ -1,12 +1,15 @@
-#ifndef __L1TMuon_EMTFRoadExtra_h__
-#define __L1TMuon_EMTFRoadExtra_h__
+#ifndef __l1t_EMTFRoad_h__
+#define __l1t_EMTFRoad_h__
 
-#include <cstdint>
 #include <vector>
+#include <boost/cstdint.hpp> 
+#include <cmath>
+#include <iostream>
 
-namespace L1TMuonEndCap {
-
-  struct EMTFRoadExtra {
+namespace l1t {
+  
+  class EMTFRoad {
+  public:
 
     EMTFRoadExtra() : endcap(0), sector(0), bx(0),
                       zone(0), key_zhit(0), pattern(0),
@@ -32,11 +35,11 @@ namespace L1TMuonEndCap {
 
     uint16_t winner;  // 0: first winner, 1: second winner, ...
 
-  };  // class EMTFRoadExtra
+  }; // End of class EMTFRoad
+  
+  // Define a vector of EMTFRoad
+  typedef std::vector<EMTFRoad> EMTFRoadCollection;
+  
+} // End of namespace l1t
 
-  // Define a vector of EMTFRoadExtra
-  typedef std::vector<EMTFRoadExtra> EMTFRoadExtraCollection;
-
-}
-
-#endif
+#endif /* define __l1t_EMTFRoad_h__ */
