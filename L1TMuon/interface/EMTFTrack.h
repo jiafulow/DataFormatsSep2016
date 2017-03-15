@@ -6,11 +6,12 @@
 
 #include <vector>
 #include <boost/cstdint.hpp>
- 
+
 #include "DataFormats/GeometryVector/interface/Pi.h"
 #include "DataFormats/L1TMuon/interface/EMTFHit.h"
+#include "DataFormats/L1TMuon/interface/EMTFRoad.h"
 #include "DataFormats/L1TMuon/interface/EMTF/SP.h"
-
+#include "DataFormats/L1TMuon/interface/RegionalMuonCand.h"
 
 namespace l1t {
 
@@ -19,23 +20,23 @@ namespace l1t {
     uint16_t mode;
     uint16_t theta;
     uint16_t eta;
-    uint16_t delta_ph  [6]; // index: 0=12, 1=13, 2=14, 3=23, 4=24, 5=34
-    uint16_t delta_th  [6]; // ^
-    uint16_t sign_ph   [6]; // ^
-    uint16_t sign_th   [6]; // ^
-    uint16_t cpattern  [4]; // index: 0=ME1, 1=ME2, 2=ME3, 3=ME4
-    uint16_t fr        [4]; // ^
-    uint16_t bt_vi     [5]; // index: 0=ME1sub1, 1=ME1sub2, 2=ME2, 3=ME3, 4=ME4
-    uint16_t bt_hi     [5]; // ^
-    uint16_t bt_ci     [5]; // ^
-    uint16_t bt_si     [5]; // ^
+    uint16_t delta_ph [6]; // index: 0=12, 1=13, 2=14, 3=23, 4=24, 5=34
+    uint16_t delta_th [6]; // ^
+    uint16_t sign_ph  [6]; // ^
+    uint16_t sign_th  [6]; // ^
+    uint16_t cpattern [4]; // index: 0=ME1, 1=ME2, 2=ME3, 3=ME4
+    uint16_t fr       [4]; // ^
+    uint16_t bt_vi    [5]; // index: 0=ME1sub1, 1=ME1sub2, 2=ME2, 3=ME3, 4=ME4
+    uint16_t bt_hi    [5]; // ^
+    uint16_t bt_ci    [5]; // ^
+    uint16_t bt_si    [5]; // ^
   };
 
 
   class EMTFTrack {
   public:
 
-    EMTFTrack() : 
+    EMTFTrack() :
         endcap(-99), sector(-99), sector_idx(-99), mode(-99), mode_inv(-99),
         rank(-99), winner(-99), charge(-99), bx(-99), first_bx(-99), second_bx(-99),
         pt(-99), pt_XML(-99), zone(-99), ph_num(-99), ph_q(-99),
@@ -43,7 +44,35 @@ namespace l1t {
         track_num(-99), has_neighbor(-99), all_neighbor(-99), numHits(-99)
         {};
 
-    explicit ~EMTFTrack() {};
+    virtual ~EMTFTrack() {};
+
+    void ImportSP( const emtf::SP _SP, int _sector );
+    // void ImportPtLUT( int _mode, unsigned long _address );
+
+    void set_Hits(EMTFHitCollection bits)   { _Hits = bits;            numHits = _Hits.size();   }
+    void push_Hit(EMTFHit bits)             { _Hits.push_back(bits);   numHits = _Hits.size();   }
+    void clear_Hits()                       { _Hits.clear();           numHits = _Hits.size();   }
+    void set_HitIdx(std::vector<uint> bits) { _HitIdx = bits;          }
+    void push_HitIdx(uint bits)             { _HitIdx.push_back(bits); }
+    void clear_HitIdx()                     { _HitIdx.clear();         }
+
+    int NumHits              () const { return numHits; }
+    EMTFHitCollection Hits   () const { return _Hits;   }
+    std::vector<uint> HitIdx () const { return _HitIdx; }
+
+    void set_Road(EMTFRoad bits) { _Road    = bits; }
+    void set_RoadIdx(uint bits)  { _RoadIdx = bits; }
+    EMTFRoad Road       () const { return _Road;    }
+    uint RoadIdx        () const { return _RoadIdx; }
+
+    void set_PtLUT(EMTFPtLUT bits)     { _PtLUT = bits; }
+    EMTFPtLUT PtLUT           () const { return _PtLUT; }
+
+    void set_GMT(RegionalMuonCand bits) { _GMT = bits;    }
+    void set_GMTIdx(uint bits)          { _GMTIdx = bits; }
+    RegionalMuonCand GMT       () const { return _GMT;    }
+    uint GMTIdx                () const { return _GMTIdx; }
+
 
     void set_endcap       (int  bits) { endcap       = bits; }
     void set_sector       (int  bits) { sector       = bits; }
@@ -70,6 +99,7 @@ namespace l1t {
     void set_track_num    (int  bits) { track_num    = bits; }
     void set_has_neighbor (int  bits) { has_neighbor = bits; }
     void set_all_neighbor (int  bits) { all_neighbor = bits; }
+
 
     int   Endcap       () const { return endcap      ; }
     int   Sector       () const { return sector      ; }
@@ -100,14 +130,21 @@ namespace l1t {
 
   private:
 
+    EMTFHitCollection _Hits;
+    std::vector<uint>  _HitIdx;
+
+    EMTFRoad _Road;
+    uint     _RoadIdx;
+
     EMTFPtLUT _PtLUT;
 
-    EMTFHitCollection _Hits;
+    RegionalMuonCand _GMT;
+    uint             _GMTIdx;
 
-    int   endcap      ; //    +/-1.  For ME+ and ME-. 
+    int   endcap      ; //    +/-1.  For ME+ and ME-.
     int   sector      ; //  1 -  6.
     int   sector_idx  ; //  0 - 11.  0 - 5 for ME+, 6 - 11 for ME-.
-    int   mode        ; //  0 - 15. 
+    int   mode        ; //  0 - 15.
     int   mode_inv    ; // 15 -  0.
     int   rank        ; //  0 - 127  (Range? - AWB 03.03.17)
     int   winner      ; //  0 -  2.  (Range? - AWB 03.03.17)
@@ -124,7 +161,7 @@ namespace l1t {
     float theta       ; //  0 - 90.
     float eta         ; //  +/-2.5.
     int   phi_fp      ; // 0 - 4920
-    float phi_loc     ; // -22 - 60  (Range? - AWB 03.03.17) 
+    float phi_loc     ; // -22 - 60  (Range? - AWB 03.03.17)
     float phi_glob    ; //  +/-180.
     int   track_num   ; //  0 - ??.  (Range? - AWB 03.03.17)
     int   has_neighbor; //  0 or 1.
@@ -132,10 +169,10 @@ namespace l1t {
     int   numHits     ; //  1 -  4.
 
   }; // End of class EMTFTrack
-  
+
   // Define a vector of EMTFTrack
   typedef std::vector<EMTFTrack> EMTFTrackCollection;
-  
+
 } // End of namespace l1t
 
 #endif /* define __l1t_EMTFTrack_h__ */
