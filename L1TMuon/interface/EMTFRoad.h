@@ -11,29 +11,28 @@ namespace l1t {
   class EMTFRoad {
   public:
 
-    EMTFRoadExtra() : endcap(0), sector(0), bx(0),
-                      zone(0), key_zhit(0), pattern(0),
-                      straightness(0), layer_code(0), quality_code(0),
-                      winner(0)
-                      {}
+    EMTFRoad() : 
+        endcap(-99), sector(-99), sector_idx(-99), bx(-99), zone(-99),
+        key_zhit(-99), pattern(-99), straightness(-99), 
+        layer_code(-99), quality_code(-99), winner(-99)
+        {};
 
-    // DetId
-    int16_t endcap;
-    int16_t sector;
+    virtual ~EMTFRoad() {};
 
-    // BX
-    int16_t bx;
 
-    // Pattern detector ID
-    uint16_t zone;
-    uint16_t key_zhit;      // also called 'ph_num' or 'ph_pat'
-    uint16_t pattern;
+  private:
 
-    uint16_t straightness;
-    uint16_t layer_code;
-    uint16_t quality_code;  // used to be 'rank'. also called 'ph_q'
-
-    uint16_t winner;  // 0: first winner, 1: second winner, ...
+    int endcap;
+    int sector;
+    int sector_idx;
+    int bx;
+    int zone;
+    int key_zhit;      // also called 'ph_num' or 'ph_pat'
+    int pattern;
+    int straightness;
+    int layer_code;
+    int quality_code;  // used to be 'rank'. also called 'ph_q'
+    int winner;  // 0: first winner, 1: second winner, ...
 
   }; // End of class EMTFRoad
   
