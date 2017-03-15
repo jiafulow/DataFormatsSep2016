@@ -45,6 +45,58 @@ namespace l1t {
 
     explicit ~EMTFTrack() {};
 
+    void set_endcap       (int  bits) { endcap       = bits; }
+    void set_sector       (int  bits) { sector       = bits; }
+    void set_sector_idx   (int  bits) { sector_idx   = bits; }
+    void set_mode         (int  bits) { mode         = bits; }
+    void set_mode_inv     (int  bits) { mode_inv     = bits; }
+    void set_rank         (int  bits) { rank         = bits; }
+    void set_winner       (int  bits) { winner       = bits; }
+    void set_charge       (int  bits) { charge       = bits; }
+    void set_bx           (int  bits) { bx           = bits; }
+    void set_first_bx     (int  bits) { first_bx     = bits; }
+    void set_second_bx    (int  bits) { second_bx    = bits; }
+    void set_pt           (float val) { pt           = val;  }
+    void set_pt_XML       (float val) { pt_XML       = val;  }
+    void set_zone         (int  bits) { zone         = bits; }
+    void set_ph_num       (int  bits) { ph_num       = bits; }
+    void set_ph_q         (int  bits) { ph_q         = bits; }
+    void set_theta_fp     (int  bits) { theta_fp     = bits; }
+    void set_theta        (float val) { theta        = val;  }
+    void set_eta          (float val) { eta          = val;  }
+    void set_phi_fp       (int  bits) { phi_fp       = bits; }
+    void set_phi_loc      (float val) { phi_loc      = val;  }
+    void set_phi_glob     (float val) { (val < 180) ? phi_glob     = val : phi_glob     = val - 360; }
+    void set_track_num    (int  bits) { track_num    = bits; }
+    void set_has_neighbor (int  bits) { has_neighbor = bits; }
+    void set_all_neighbor (int  bits) { all_neighbor = bits; }
+
+    int   Endcap       () const { return endcap      ; }
+    int   Sector       () const { return sector      ; }
+    int   Sector_idx   () const { return sector_idx  ; }
+    int   Mode         () const { return mode        ; }
+    int   Mode_inv     () const { return mode_inv    ; }
+    int   Rank         () const { return rank        ; }
+    int   Winner       () const { return winner      ; }
+    int   Charge       () const { return charge      ; }
+    int   BX           () const { return bx          ; }
+    int   First_BX     () const { return first_bx    ; }
+    int   Second_BX    () const { return second_bx   ; }
+    float Pt           () const { return pt          ; }
+    float Pt_XML       () const { return pt_XML      ; }
+    int   Zone         () const { return zone        ; }
+    int   Ph_num       () const { return ph_num      ; }
+    int   Ph_q         () const { return ph_q        ; }
+    int   Theta_fp     () const { return theta_fp    ; }
+    float Theta        () const { return theta       ; }
+    float Eta          () const { return eta         ; }
+    int   Phi_fp       () const { return phi_fp      ; }
+    float Phi_loc      () const { return phi_loc     ; }
+    float Phi_glob     () const { return phi_glob    ; }
+    int   Track_num    () const { return track_num   ; }
+    int   Has_neighbor () const { return has_neighbor; }
+    int   All_neighbor () const { return all_neighbor; }
+
 
   private:
 
@@ -52,32 +104,32 @@ namespace l1t {
 
     EMTFHitCollection _Hits;
 
-    int endcap;
-    int sector;
-    int sector_idx;
-    int mode;
-    int mode_inv;
-    int rank;
-    int winner;  // 0: first winner, 1: second winner, ...
-    int charge;
-    int bx;
-    int first_bx;
-    int second_bx;
-    float pt;
-    float pt_XML;
-    int zone;
-    int ph_num;
-    int ph_q;
-    int theta_fp;
-    float theta;
-    float eta;
-    int phi_fp;
-    float phi_loc;
-    float phi_glob;
-    int track_num;  // the final position after removing invalid tracks and ghosts
-    int has_neighbor;
-    int all_neighbor;
-    int numHits;
+    int   endcap      ; //    +/-1.  For ME+ and ME-. 
+    int   sector      ; //  1 -  6.
+    int   sector_idx  ; //  0 - 11.  0 - 5 for ME+, 6 - 11 for ME-.
+    int   mode        ; //  0 - 15. 
+    int   mode_inv    ; // 15 -  0.
+    int   rank        ; //  0 - 127  (Range? - AWB 03.03.17)
+    int   winner      ; //  0 -  2.  (Range? - AWB 03.03.17)
+    int   charge      ; //    +/-1.  For physical charge (reversed from GMT convention)
+    int   bx          ; // -3 - +3.
+    int   first_bx    ; // -3 - +3.
+    int   second_bx   ; // -3 - +3.
+    float pt          ; //  0 - 255
+    float pt_XML      ; //  0 - 999
+    int   zone        ; //  0 -  3.
+    int   ph_num      ;
+    int   ph_q        ;
+    int   theta_fp    ; //  0 - 127
+    float theta       ; //  0 - 90.
+    float eta         ; //  +/-2.5.
+    int   phi_fp      ; // 0 - 4920
+    float phi_loc     ; // -22 - 60  (Range? - AWB 03.03.17) 
+    float phi_glob    ; //  +/-180.
+    int   track_num   ; //  0 - ??.  (Range? - AWB 03.03.17)
+    int   has_neighbor; //  0 or 1.
+    int   all_neighbor; //  0 or 1.
+    int   numHits     ; //  1 -  4.
 
   }; // End of class EMTFTrack
   
