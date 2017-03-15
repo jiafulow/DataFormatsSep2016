@@ -1,17 +1,20 @@
-#ifndef __L1TMuon_EMTFTrackExtra_h__
-#define __L1TMuon_EMTFTrackExtra_h__
+// Class for muon tracks in EMTF - AWB 04.01.16
+// Mostly copied from L1Trigger/L1TMuonEndCap/interface/MuonInternalTrack.h
 
-#include <cstdint>
+#ifndef __l1t_EMTFTrack_h__
+#define __l1t_EMTFTrack_h__
+
 #include <vector>
-#include <array>
+#include <boost/cstdint.hpp>
+ 
+#include "DataFormats/GeometryVector/interface/Pi.h"
+#include "DataFormats/L1TMuon/interface/EMTFHit.h"
+#include "DataFormats/L1TMuon/interface/EMTF/SP.h"
 
-#include "DataFormatsSep2016/L1TMuon/interface/EMTFHitExtra.h"
-#include "DataFormatsSep2016/L1TMuon/interface/EMTFPtLUTData.h"
 
-
-namespace L1TMuonEndCap {
-
-  struct EMTFTrackExtra {
+namespace l1t {
+  class EMTFTrack {
+  public:
 
     EMTFTrackExtra() : endcap(0), sector(0), bx(0), first_bx(0), second_bx(0),
                        zone(0), ph_num(0), ph_q(0),
@@ -74,11 +77,11 @@ namespace L1TMuonEndCap {
     // Hits
     std::vector<EMTFHitExtra> xhits;
 
-  };  // class EMTFTrackExtra
+  }; // End of class EMTFTrack
+  
+  // Define a vector of EMTFTrack
+  typedef std::vector<EMTFTrack> EMTFTrackCollection;
+  
+} // End of namespace l1t
 
-  // Define a vector of EMTFTrackExtra
-  typedef std::vector<EMTFTrackExtra> EMTFTrackExtraCollection;
-
-}
-
-#endif
+#endif /* define __l1t_EMTFTrack_h__ */
