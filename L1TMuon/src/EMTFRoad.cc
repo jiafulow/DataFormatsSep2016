@@ -1,6 +1,4 @@
-#include "DataFormatsSep2016/L1TMuon/interface/EMTFRoadExtra.h"
+#include "DataFormats/L1TMuon/interface/EMTFRoad.h"
 
-#include <cassert>
-#include <type_traits>
-static_assert(std::is_trivially_copyable<L1TMuonEndCap::EMTFRoadExtra>::value, "EMTFRoadExtra is not trivially copyable");
-
+namespace l1t {
+} // End namespace l1t
