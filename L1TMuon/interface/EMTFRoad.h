@@ -1,10 +1,8 @@
 #ifndef __l1t_EMTFRoad_h__
 #define __l1t_EMTFRoad_h__
 
+#include <cstdint>
 #include <vector>
-#include <boost/cstdint.hpp>
-#include <cmath>
-#include <iostream>
 
 namespace l1t {
 
