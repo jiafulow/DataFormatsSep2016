@@ -4,14 +4,12 @@
 #ifndef __l1t_EMTFTrack_h__
 #define __l1t_EMTFTrack_h__
 
+#include <cstdint>
 #include <vector>
-#include <boost/cstdint.hpp>
 
-#include "DataFormats/GeometryVector/interface/Pi.h"
 #include "DataFormats/L1TMuon/interface/EMTFHit.h"
 #include "DataFormats/L1TMuon/interface/EMTFRoad.h"
 #include "DataFormats/L1TMuon/interface/EMTF/SP.h"
-#include "DataFormats/L1TMuon/interface/RegionalMuonCand.h"
 
 namespace l1t {
 
@@ -41,38 +39,35 @@ namespace l1t {
         rank(-99), winner(-99), charge(-99), bx(-99), first_bx(-99), second_bx(-99),
         pt(-99), pt_XML(-99), zone(-99), ph_num(-99), ph_q(-99),
         theta_fp(-99), theta(-99), eta(-99), phi_fp(-99), phi_loc(-99), phi_glob(-99),
+        gmt_pt(-99), gmt_phi(-99), gmt_eta(-99), gmt_quality(-99), gmt_charge(-99), gmt_charge_valid(-99),
         track_num(-99), has_neighbor(-99), all_neighbor(-99), numHits(-99)
         {};
 
     virtual ~EMTFTrack() {};
 
+    typedef unsigned int uint;
+
     void ImportSP( const emtf::SP _SP, int _sector );
     // void ImportPtLUT( int _mode, unsigned long _address );
 
-    void set_Hits(EMTFHitCollection bits)   { _Hits = bits;            numHits = _Hits.size();   }
-    void push_Hit(EMTFHit bits)             { _Hits.push_back(bits);   numHits = _Hits.size();   }
-    void clear_Hits()                       { _Hits.clear();           numHits = _Hits.size();   }
-    void set_HitIdx(std::vector<uint> bits) { _HitIdx = bits;          }
-    void push_HitIdx(uint bits)             { _HitIdx.push_back(bits); }
-    void clear_HitIdx()                     { _HitIdx.clear();         }
+    void set_Hits(const EMTFHitCollection& bits)   { _Hits = bits;            numHits = _Hits.size();   }
+    void push_Hit(const EMTFHit& bits)             { _Hits.push_back(bits);   numHits = _Hits.size();   }
+    void clear_Hits()                              { _Hits.clear();           numHits = _Hits.size();   }
+    void set_HitIdx(const std::vector<uint>& bits) { _HitIdx = bits;          }
+    void push_HitIdx(uint bits)                    { _HitIdx.push_back(bits); }
+    void clear_HitIdx()                            { _HitIdx.clear();         }
 
     int NumHits              () const { return numHits; }
     EMTFHitCollection Hits   () const { return _Hits;   }
     std::vector<uint> HitIdx () const { return _HitIdx; }
 
-    void set_Road(EMTFRoad bits) { _Road    = bits; }
-    void set_RoadIdx(uint bits)  { _RoadIdx = bits; }
-    EMTFRoad Road       () const { return _Road;    }
-    uint RoadIdx        () const { return _RoadIdx; }
+    void set_Road(const EMTFRoad& bits) { _Road    = bits; }
+    void set_RoadIdx(uint bits)         { _RoadIdx = bits; }
+    EMTFRoad Road              () const { return _Road;    }
+    uint RoadIdx               () const { return _RoadIdx; }
 
     void set_PtLUT(EMTFPtLUT bits)     { _PtLUT = bits; }
     EMTFPtLUT PtLUT           () const { return _PtLUT; }
-
-    void set_GMT(RegionalMuonCand bits) { _GMT = bits;    }
-    void set_GMTIdx(uint bits)          { _GMTIdx = bits; }
-    RegionalMuonCand GMT       () const { return _GMT;    }
-    uint GMTIdx                () const { return _GMTIdx; }
-
 
     void set_endcap       (int  bits) { endcap       = bits; }
     void set_sector       (int  bits) { sector       = bits; }
@@ -96,6 +91,12 @@ namespace l1t {
     void set_phi_fp       (int  bits) { phi_fp       = bits; }
     void set_phi_loc      (float val) { phi_loc      = val;  }
     void set_phi_glob     (float val) { phi_glob     = val;  }
+    void set_gmt_pt       (int  bits) { gmt_pt       = bits; }
+    void set_gmt_phi      (int  bits) { gmt_phi      = bits; }
+    void set_gmt_eta      (int  bits) { gmt_eta      = bits; }
+    void set_gmt_quality  (int  bits) { gmt_quality  = bits; }
+    void set_gmt_charge   (int  bits) { gmt_charge   = bits; }
+    void set_gmt_charge_valid (int  bits) { gmt_charge_valid = bits; }
     void set_track_num    (int  bits) { track_num    = bits; }
     void set_has_neighbor (int  bits) { has_neighbor = bits; }
     void set_all_neighbor (int  bits) { all_neighbor = bits; }
@@ -123,6 +124,12 @@ namespace l1t {
     int   Phi_fp       () const { return phi_fp      ; }
     float Phi_loc      () const { return phi_loc     ; }
     float Phi_glob     () const { return phi_glob    ; }
+    int   GMT_pt       () const { return gmt_pt      ; }
+    int   GMT_phi      () const { return gmt_phi     ; }
+    int   GMT_eta      () const { return gmt_eta     ; }
+    int   GMT_quality  () const { return gmt_quality ; }
+    int   GMT_charge   () const { return gmt_charge  ; }
+    int   GMT_charge_valid () const { return gmt_charge_valid; }
     int   Track_num    () const { return track_num   ; }
     int   Has_neighbor () const { return has_neighbor; }
     int   All_neighbor () const { return all_neighbor; }
@@ -131,15 +138,12 @@ namespace l1t {
   private:
 
     EMTFHitCollection _Hits;
-    std::vector<uint>  _HitIdx;
+    std::vector<uint> _HitIdx;
 
     EMTFRoad _Road;
     uint     _RoadIdx;
 
     EMTFPtLUT _PtLUT;
-
-    RegionalMuonCand _GMT;
-    uint             _GMTIdx;
 
     int   endcap      ; //    +/-1.  For ME+ and ME-.
     int   sector      ; //  1 -  6.
@@ -163,6 +167,12 @@ namespace l1t {
     int   phi_fp      ; // 0 - 4920
     float phi_loc     ; // -22 - 60  (Range? - AWB 03.03.17)
     float phi_glob    ; //  +/-180.
+    int   gmt_pt      ;
+    int   gmt_phi     ;
+    int   gmt_eta     ;
+    int   gmt_quality ;
+    int   gmt_charge  ;
+    int   gmt_charge_valid;
     int   track_num   ; //  0 - ??.  (Range? - AWB 03.03.17)
     int   has_neighbor; //  0 or 1.
     int   all_neighbor; //  0 or 1.
