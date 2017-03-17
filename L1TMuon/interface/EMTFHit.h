@@ -5,10 +5,8 @@
 #ifndef __l1t_EMTFHit_h__
 #define __l1t_EMTFHit_h__
 
+#include <cstdint>
 #include <vector>
-#include <boost/cstdint.hpp>
-#include <cmath>
-#include <iostream>
 
 #include "DataFormats/MuonDetId/interface/CSCDetId.h"
 #include "DataFormats/MuonDetId/interface/RPCDetId.h"
@@ -37,21 +35,21 @@ namespace l1t {
     virtual ~EMTFHit() {};
 
     // void ImportCSCDetId (const CSCDetId& _detId);
-    CSCDetId CreateCSCDetId();
+    CSCDetId CreateCSCDetId() const;
     // void ImportRPCDetId (const RPCDetId& _detId);
-    // RPCDetId CreateRPCDetId();
+    // RPCDetId CreateRPCDetId() const;
     // void ImportCSCCorrelatedLCTDigi (const CSCCorrelatedLCTDigi& _digi);
-    CSCCorrelatedLCTDigi CreateCSCCorrelatedLCTDigi();
+    CSCCorrelatedLCTDigi CreateCSCCorrelatedLCTDigi() const;
     // void ImportRPCDigi (const RPCDigi& _digi);
-    // RPCDigi CreateRPCDigi();
+    // RPCDigi CreateRPCDigi() const;
 
-    // void PrintSimulatorHeader();
-    // void PrintForSimulator();
+    // void PrintSimulatorHeader() const;
+    // void PrintForSimulator() const;
 
-    void SetCSCDetId         (CSCDetId id)                 { csc_DetId         = id;        }
-    void SetRPCDetId         (RPCDetId id)                 { rpc_DetId         = id;        }
-    void SetCSCLCTDigi       (CSCCorrelatedLCTDigi digi)   { csc_LCTDigi       = digi;      }
-    void SetRPCDigi          (RPCDigi digi)                { rpc_Digi          = digi;      }
+    void SetCSCDetId   (const CSCDetId& id)                 { csc_DetId         = id;        }
+    void SetRPCDetId   (const RPCDetId& id)                 { rpc_DetId         = id;        }
+    void SetCSCLCTDigi (const CSCCorrelatedLCTDigi& digi)   { csc_LCTDigi       = digi;      }
+    void SetRPCDigi    (const RPCDigi& digi)                { rpc_Digi          = digi;      }
 
     CSCDetId CSC_DetId                          () const { return csc_DetId;    }
     RPCDetId RPC_DetId                          () const { return rpc_DetId;    }
