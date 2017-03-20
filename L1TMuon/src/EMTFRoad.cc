@@ -1,4 +1,4 @@
-#include "DataFormatsSep2016/L1TMuon/interface/EMTFRoad.h"
+#include "DataFormats/L1TMuon/interface/EMTFRoad.h"
 
-namespace L1TMuonEndCap {
+namespace l1t {
 } // End namespace l1t
