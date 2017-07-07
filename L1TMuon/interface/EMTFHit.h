@@ -29,7 +29,7 @@ namespace l1t {
       pattern(-99), bend(-99), valid(-99), sync_err(-99), bc0(-99), bx(-99), stub_num(-99),
       phi_fp(-99), theta_fp(-99), phzvl(-99), ph_hit(-99), zone_hit(-99), zone_code(-99),
       fs_segment(-99), fs_zone_code(-99), bt_station(-99), bt_segment(-99),
-      phi_loc(-99), phi_glob(-999), theta(-99), eta(-99),
+      phi_loc(-99), phi_glob(-999), theta(-99), eta(-99), time(-99),
       phi_sim(-999), theta_sim(-99), eta_sim(-99),
       is_CSC(-99), is_RPC(-99), is_GEM(-99), subsystem(-99)
       {};
@@ -111,6 +111,7 @@ namespace l1t {
     void set_phi_glob     (float val) { phi_glob     = val;  }
     void set_theta        (float val) { theta        = val;  }
     void set_eta          (float val) { eta          = val;  }
+    void set_time         (float val) { time         = val;  }
     void set_phi_sim      (float val) { phi_sim      = val;  }
     void set_theta_sim    (float val) { theta_sim    = val;  }
     void set_eta_sim      (float val) { eta_sim      = val;  }
@@ -164,6 +165,7 @@ namespace l1t {
     float Phi_glob     ()  const { return phi_glob    ; }
     float Theta        ()  const { return theta       ; }
     float Eta          ()  const { return eta         ; }
+    float Time         ()  const { return time        ; }
     float Phi_sim      ()  const { return phi_sim     ; }
     float Theta_sim    ()  const { return theta_sim   ; }
     float Eta_sim      ()  const { return eta_sim     ; }
@@ -227,6 +229,7 @@ namespace l1t {
     float phi_glob    ; // +/-180.
     float theta       ; // 0 - 90.
     float eta         ; // +/-2.5.
+    float time        ; //  ? -  ?.  RPC time information
     float phi_sim     ; // +/-180.
     float theta_sim   ; // 0 - 90.
     float eta_sim     ; // +/-2.5.
