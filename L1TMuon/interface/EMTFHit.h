@@ -22,8 +22,8 @@ namespace l1t {
   public:
 
     EMTFHit() :
-    endcap(-99), station(-99), ring(-99), sector(-99), sector_RPC(-99), sector_idx(-99), 
-      subsector(-99), subsector_RPC(-99), chamber(-99), csc_ID(-99), csc_nID(-99), roll(-99), 
+      endcap(-99), station(-99), ring(-99), sector(-99), sector_RPC(-99), sector_idx(-99),
+      subsector(-99), subsector_RPC(-99), chamber(-99), csc_ID(-99), csc_nID(-99), roll(-99),
       neighbor(-99), mpc_link(-99), pc_sector(-99), pc_station(-99), pc_chamber(-99), pc_segment(-99),
       wire(-99), strip(-99), strip_hi(-99), strip_low(-99), track_num(-99), quality(-99),
       pattern(-99), bend(-99), valid(-99), sync_err(-99), bc0(-99), bx(-99), stub_num(-99),
