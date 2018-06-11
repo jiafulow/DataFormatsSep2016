@@ -36,7 +36,7 @@ namespace l1t {
       phi_loc(-99), phi_glob(-999), theta(-99), eta(-99), time(-99),
       phi_sim(-999), theta_sim(-99), eta_sim(-99), rho_sim(-99), z_sim(-99),
       alct_quality(-99), clct_quality(-99),
-      is_CSC(-99), is_RPC(-99), is_GEM(-99), subsystem(-99)
+      is_CSC(-99), is_RPC(-99), is_GEM(-99), is_ME0(-99), subsystem(-99)
       {};
 
     virtual ~EMTFHit() {};
@@ -139,6 +139,7 @@ namespace l1t {
     void set_is_CSC       (int  bits) { is_CSC       = bits; }
     void set_is_RPC       (int  bits) { is_RPC       = bits; }
     void set_is_GEM       (int  bits) { is_GEM       = bits; }
+    void set_is_ME0       (int  bits) { is_ME0       = bits; }
     void set_subsystem    (int  bits) { subsystem    = bits; }
 
     int   Endcap       ()  const { return endcap      ; }
@@ -197,6 +198,7 @@ namespace l1t {
     int   Is_CSC       ()  const { return is_CSC      ; }
     int   Is_RPC       ()  const { return is_RPC      ; }
     int   Is_GEM       ()  const { return is_GEM      ; }
+    int   Is_ME0       ()  const { return is_ME0      ; }
     int   Subsystem    ()  const { return subsystem   ; }
 
 
@@ -268,6 +270,7 @@ namespace l1t {
     int   is_CSC      ; //  0 or 1.
     int   is_RPC      ; //  0 or 1.
     int   is_GEM      ; //  0 or 1.
+    int   is_ME0      ; //  0 or 1.
     int   subsystem   ; //  1 or ?.  1 for CSC, 2 for RPC, 3 for GEM
 
   }; // End of class EMTFHit
