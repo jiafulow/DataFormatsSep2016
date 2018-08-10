@@ -33,7 +33,7 @@ namespace l1t {
       phi_fp(-99), theta_fp(-99), phzvl(-99), ph_hit(-99), zone_hit(-99), zone_code(-99),
       fs_segment(-99), fs_zone_code(-99), bt_station(-99), bt_segment(-99),
       phi_loc(-99), phi_glob(-999), theta(-99), eta(-99), time(-99),
-      phi_sim(-999), theta_sim(-99), eta_sim(-99), rho_sim(-99), z_sim(-99), comp_digis(-99),
+      phi_sim(-999), theta_sim(-99), eta_sim(-99), rho_sim(-99), z_sim(-99),
       is_CSC(-99), is_RPC(-99), is_GEM(-99), is_ME0(-99), subsystem(-99)
       {};
 
@@ -128,7 +128,6 @@ namespace l1t {
     void set_eta_sim      (float val) { eta_sim      = val;  }
     void set_rho_sim      (float val) { rho_sim      = val;  }
     void set_z_sim        (float val) { z_sim        = val;  }
-    void set_comp_digis   (uint64_t b){ comp_digis   = b;    }
     void set_is_CSC       (int  bits) { is_CSC       = bits; }
     void set_is_RPC       (int  bits) { is_RPC       = bits; }
     void set_is_GEM       (int  bits) { is_GEM       = bits; }
@@ -186,7 +185,6 @@ namespace l1t {
     float Eta_sim      ()  const { return eta_sim     ; }
     float Rho_sim      ()  const { return rho_sim     ; }
     float Z_sim        ()  const { return z_sim       ; }
-    uint64_t Comp_digis()  const { return comp_digis  ; }
     int   Is_CSC       ()  const { return is_CSC      ; }
     int   Is_RPC       ()  const { return is_RPC      ; }
     int   Is_GEM       ()  const { return is_GEM      ; }
@@ -256,7 +254,6 @@ namespace l1t {
     float eta_sim     ; // +/-2.5.
     float rho_sim     ; //  ? -  ?.
     float z_sim       ; //  ? -  ?.
-    uint64_t comp_digis;//  ? -  ?.
     int   is_CSC      ; //  0 or 1.
     int   is_RPC      ; //  0 or 1.
     int   is_GEM      ; //  0 or 1.
