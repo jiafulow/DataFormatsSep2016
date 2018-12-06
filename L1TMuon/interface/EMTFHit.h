@@ -12,10 +12,11 @@
 #include "DataFormats/MuonDetId/interface/RPCDetId.h"
 #include "DataFormats/MuonDetId/interface/GEMDetId.h"
 #include "DataFormats/MuonDetId/interface/ME0DetId.h"
+#include "DataFormats/MuonDetId/interface/DTChamberId.h"
 #include "DataFormats/CSCDigi/interface/CSCCorrelatedLCTDigi.h"
 #include "DataFormats/RPCDigi/interface/RPCDigi.h"
-#include "DataFormats/GEMDigi/interface/GEMPadDigi.h"
-#include "DataFormats/GEMDigi/interface/ME0PadDigi.h"
+//#include "DataFormats/GEMDigi/interface/GEMPadDigi.h"
+//#include "DataFormats/GEMDigi/interface/ME0PadDigi.h"
 #include "DataFormats/L1TMuon/interface/EMTF/ME.h"
 
 namespace l1t {
@@ -34,7 +35,7 @@ namespace l1t {
       fs_segment(-99), fs_zone_code(-99), bt_station(-99), bt_segment(-99),
       phi_loc(-99), phi_glob(-999), theta(-99), eta(-99), time(-99),
       phi_sim(-999), theta_sim(-99), eta_sim(-99), rho_sim(-99), z_sim(-99),
-      is_CSC(-99), is_RPC(-99), is_GEM(-99), is_ME0(-99), subsystem(-99)
+      is_CSC(-99), is_RPC(-99), is_GEM(-99), is_ME0(-99), is_DT(-99), subsystem(-99)
       {};
 
     virtual ~EMTFHit() {};
@@ -65,6 +66,7 @@ namespace l1t {
     void SetRPCDetId   (const RPCDetId& id)                 { rawDetId = id.rawId(); }
     void SetGEMDetId   (const GEMDetId& id)                 { rawDetId = id.rawId(); }
     void SetME0DetId   (const ME0DetId& id)                 { rawDetId = id.rawId(); }
+    void SetDTDetId    (const DTChamberId& id)              { rawDetId = id.rawId(); }
 
     //CSCDetId CSC_DetId                          () const { return csc_DetId;    }
     //RPCDetId RPC_DetId                          () const { return rpc_DetId;    }
@@ -76,6 +78,7 @@ namespace l1t {
     RPCDetId RPC_DetId                          () const { return RPCDetId(rawDetId); }
     GEMDetId GEM_DetId                          () const { return GEMDetId(rawDetId); }
     ME0DetId ME0_DetId                          () const { return ME0DetId(rawDetId); }
+    DTChamberId DT_DetId                        () const { return DTChamberId(rawDetId); }
 
     void set_endcap       (int  bits) { endcap       = bits; }
     void set_station      (int  bits) { station      = bits; }
@@ -132,6 +135,7 @@ namespace l1t {
     void set_is_RPC       (int  bits) { is_RPC       = bits; }
     void set_is_GEM       (int  bits) { is_GEM       = bits; }
     void set_is_ME0       (int  bits) { is_ME0       = bits; }
+    void set_is_DT        (int  bits) { is_DT        = bits; }
     void set_subsystem    (int  bits) { subsystem    = bits; }
 
     int   Endcap       ()  const { return endcap      ; }
@@ -189,6 +193,7 @@ namespace l1t {
     int   Is_RPC       ()  const { return is_RPC      ; }
     int   Is_GEM       ()  const { return is_GEM      ; }
     int   Is_ME0       ()  const { return is_ME0      ; }
+    int   Is_DT        ()  const { return is_DT       ; }
     int   Subsystem    ()  const { return subsystem   ; }
 
 
@@ -258,7 +263,8 @@ namespace l1t {
     int   is_RPC      ; //  0 or 1.
     int   is_GEM      ; //  0 or 1.
     int   is_ME0      ; //  0 or 1.
-    int   subsystem   ; //  1 or ?.  1 for CSC, 2 for RPC, 3 for GEM, 4 for ME0
+    int   is_DT       ; //  0 or 1.
+    int   subsystem   ; //  1 or ?.  0 for DT, 1 for CSC, 2 for RPC, 3 for GEM, 4 for ME0
 
   }; // End of class EMTFHit
 
